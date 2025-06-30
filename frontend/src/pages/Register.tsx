@@ -16,7 +16,6 @@ const Register = () => {
 
   // Interface para os dados do formulário de registro
   type User = {
-    token: string;
     name: string,
     email: string,
     password: string
@@ -25,7 +24,6 @@ const Register = () => {
   // Valores iniciais do formulário
   const initialValues: User = {
     name: '',
-    token: '',
     email: '',
     password: ''
   }
@@ -50,9 +48,6 @@ const Register = () => {
         toast.error(error.data.message);
         return
       }
-
-      // Armazena o token de autenticação no localStorage
-      localStorage.setItem("token", data.token);
 
       resetForm()
       navigate("/")
@@ -107,7 +102,6 @@ const Register = () => {
               {/* Botão de Registro */}
               <div className="mb-3 py-1">
                 <Button 
-                  disabled={!values.token} 
                   loading={registerUserResponse.isLoading} 
                   raised 
                   type='submit' 

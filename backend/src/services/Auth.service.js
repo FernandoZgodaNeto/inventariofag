@@ -12,37 +12,6 @@ const axios = require("axios");
 
 const isProduction = process.env.NODE_ENV === "production";
 
-/**
- * Verifica o token do reCAPTCHA
- * @param {string} token - Token do reCAPTCHA
- * @returns {boolean} - True se válido, false caso contrário
- */
-async function verifyCaptcha(token) {
-  if (!isProduction) {
-    console.log("Captcha ignorado no ambiente de desenvolvimento");
-    return true;
-  }
-
-  try {
-    const response = await axios.post(
-      `https://www.google.com/recaptcha/api/siteverify`,
-      {},
-      {
-        params: {
-          secret: process.env.CAPTCHA_SCREATE_KEY,
-          response: token,
-        },
-      }
-    );
-
-    const data = response.data;
-    return data.success;
-  } catch (error) {
-    console.error("Erro ao verificar captcha:", error.message);
-    return false;
-  }
-}
-
 class AuthService {
   /**
    * Registra um novo usuário no sistema
@@ -51,12 +20,6 @@ class AuthService {
    */
   static async RegisterUser(body) {
     const { email, password, name, token } = body;
-
-    // Verifica se o captcha é válido
-    const isValid = await verifyCaptcha(token);
-    if (!isValid) {
-      throw new ApiError(httpStatus.BAD_REQUEST, "Captcha inválido");
-    }
 
     // Verifica se o usuário já existe
     const checkExist = await UserModel.findOne({ email });
@@ -96,12 +59,6 @@ class AuthService {
    */
   static async LoginUser(body) {
     const { email, password, token } = body;
-
-    // Verifica se o captcha é válido
-    const isValid = await verifyCaptcha(token);
-    if (!isValid) {
-      throw new ApiError(httpStatus.BAD_REQUEST, "Captcha inválido");
-    }
 
     // Verifica se o usuário existe
     const checkExist = await UserModel.findOne({ email });

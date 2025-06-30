@@ -16,14 +16,12 @@ const Login = () => {
 
   // Interface para os dados do formulário de login
   type User = {
-    token: string;
     email: string;
     password: string;
   };
 
   // Valores iniciais do formulário
   const initialValues: User = {
-    token: "",
     email: "",
     password: "",
   };
@@ -52,9 +50,6 @@ const Login = () => {
         toast.error(error.data.message);
         return;
       }
-
-      // Armazena o token de autenticação no localStorage
-      localStorage.setItem("token", data.token);
 
       resetForm();
       navigate("/");
@@ -114,7 +109,6 @@ const Login = () => {
                 <div className="mb-3 py-1 flex items-center justify-center">
                   <Button
                     type="submit"
-                    disabled={!values.token}
                     loading={LoginUserResponse.isLoading}
                     className="w-full bg-red-500 text-white py-3 px-2 flex items-center justify-center"
                   >
