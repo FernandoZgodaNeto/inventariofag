@@ -7,8 +7,8 @@ const axios = require("axios");
 
 // Configurações
 const BASE_URL = "http://localhost:4000/api/v1";
-const TEST_EMAIL = "marco@email.com";
-const TEST_PASSWORD = "123456"; // Substitua pela senha real
+const TEST_EMAIL = "fernando@email.com";
+const TEST_PASSWORD = "123456";
 
 async function testLogin() {
   try {
@@ -21,7 +21,6 @@ async function testLogin() {
     const loginData = {
       email: TEST_EMAIL,
       password: TEST_PASSWORD,
-      token: "test-token" // Token fake para desenvolvimento
     };
 
     console.log("📤 Enviando requisição de login...");

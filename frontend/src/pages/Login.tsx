@@ -50,7 +50,7 @@ const Login = () => {
         toast.error(error.data.message);
         return;
       }
-
+      localStorage.setItem("token", data.token);
       resetForm();
       navigate("/");
     } catch (error: any) {
@@ -121,17 +121,7 @@ const Login = () => {
                   <p className="inline-flex items-center gap-x-1">
                     Não tem uma conta?
                     <Link className="font-semibold" to={"/register"}>
-                      Registrar
-                    </Link>
-                  </p>
-                </div>
-
-                {/* Link para Recuperação de Senha */}
-                <div className="mb-3 py-1 flex items-center justify-end">
-                  <p className="inline-flex items-center gap-x-1">
-                    Esqueceu a
-                    <Link className="font-semibold" to={"#"}>
-                      senha?
+                      Registre-se
                     </Link>
                   </p>
                 </div>

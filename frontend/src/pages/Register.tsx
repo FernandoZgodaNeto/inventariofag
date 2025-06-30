@@ -48,7 +48,7 @@ const Register = () => {
         toast.error(error.data.message);
         return
       }
-
+      localStorage.setItem("token", data.token);
       resetForm()
       navigate("/")
     } catch (error: any) {
@@ -116,7 +116,7 @@ const Register = () => {
                 <p className="inline-flex items-center gap-x-1">
                   Já tem uma conta?
                   <Link className='font-semibold' to={'/login'}>
-                    Entrar
+                    Entre
                   </Link>
                 </p>
               </div>
