@@ -60,7 +60,7 @@ const Login = () => {
 
   return (
     <>
-      <div className="min-h-screen flex items-center justify-center w-full bg-[#eee]">
+      <div className="min-h-screen flex items-center justify-center w-full bg-[#eeee]">
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -70,16 +70,17 @@ const Login = () => {
             <>
               <form
                 onSubmit={handleSubmit}
-                className="w-[96%] md:w-[70%] lg:w-1/3 shadow-md rounded-md pt-10 pb-3 px-4 bg-white"
+                className="w-[96%] md:w-[70%] lg:w-1/3 shadow-lg rounded-lg pt-10 pb-3 px-4 bg-white"
               >
+                <h1 className="text-center font-bold text-2xl">LOGIN</h1>
                 {/* Campo Email */}
                 <div className="mb-3 py-1">
-                  <label htmlFor="email">Email</label>
+                  <label htmlFor="email">E-mail</label>
                   <Field
                     id="email"
                     name="email"
                     className="w-full outline-none py-3 px-2 border-[.1px] border-zinc-400 rounded-lg"
-                    placeholder="Digite seu endereço de email"
+                    placeholder="Digite seu e-mail"
                   />
                   <ErrorMessage
                     component={"p"}
@@ -96,7 +97,7 @@ const Login = () => {
                     id="password"
                     type="password"
                     className="w-full outline-none py-3 px-2 border-[.1px] border-zinc-400 rounded-lg"
-                    placeholder="*****"
+                    placeholder="******************"
                   />
                   <ErrorMessage
                     component={"p"}
@@ -110,16 +111,16 @@ const Login = () => {
                   <Button
                     type="submit"
                     loading={LoginUserResponse.isLoading}
-                    className="w-full bg-red-500 text-white py-3 px-2 flex items-center justify-center"
+                    className="w-full bg-blue-800 text-white py-3 px-2 flex items-center justify-center rounded-lg font-semibold"
                   >
-                    Entrar
+                    ENTRAR
                   </Button>
                 </div>
 
                 {/* Link para Registro */}
-                <div className="mb-3 py-1 flex items-center justify-end">
+                <div className="mb-3 py-1 flex items-center justify-center">
                   <p className="inline-flex items-center gap-x-1">
-                    Não tem uma conta?
+                    Não possui conta?
                     <Link className="font-semibold" to={"/register"}>
                       Registre-se
                     </Link>

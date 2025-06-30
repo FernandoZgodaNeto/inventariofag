@@ -40,7 +40,7 @@ export default function BasicChart() {
                         'rgb(75, 192, 192)',
                         'rgb(54, 162, 235)',
                     ],
-                    borderWidth: 1
+                    borderWidth: 2
                 }
             ]
         };
@@ -71,7 +71,7 @@ export default function BasicChart() {
     }
 
     return (
-        <Chart type="bar" width='' className=' w-full lg:w-1/2 ' data={chartData} options={chartOptions} />
+        <Chart type="bar" width='' className=' w-full lg:w-1/2' data={chartData} options={chartOptions} />
     )
 }
 

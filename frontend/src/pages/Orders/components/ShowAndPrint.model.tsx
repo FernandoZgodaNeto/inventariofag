@@ -102,7 +102,7 @@ const ShowAndPrintModel = ({ setVisible, visible, id }: any) => {
         {/* Botão para gerar PDF */}
         <footer>
           <button
-            className='px-6 py-2 outline-none bg-red-500 rounded-md text-white'
+            className='px-6 py-2 outline-none bg-green-500 rounded-md text-white'
             onClick={() => toPDF({
               method: 'open',
               page: {

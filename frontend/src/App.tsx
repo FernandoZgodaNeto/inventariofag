@@ -77,9 +77,11 @@ function App() {
   return (
     <>
       <Header />
-      <MainLayout>
-        <Outlet />
-      </MainLayout>
+      <div className="bg-stone-400 text-stone-100">
+        <MainLayout>
+          <Outlet />
+        </MainLayout>
+      </div>
     </>
   );
 }

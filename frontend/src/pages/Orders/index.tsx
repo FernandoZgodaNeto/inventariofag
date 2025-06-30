@@ -89,16 +89,16 @@ const OrdersPage = () => {
       <div className="mb-3 flex justify-end w-[90%] mx-auto">
         <button
           onClick={() => setVisible(!visible)}
-          className="px-5 py-2 bg-purple-500 text-white rounded-sm"
+          className="px-5 py-2 bg-sky-500 text-white rounded-sm rounded-lg"
         >
-          Adicionar Pedidos
+          Novo Pedido
         </button>
       </div>
 
       {/* Formulário de busca */}
       <form
         onSubmit={SearchHandler}
-        className="mb-3 flex justify-end w-[90%] mx-auto"
+        className="mb-3 flex justify-end w-[90%] mx-auto rounded-lg"
       >
         <input
           value={Search}
@@ -138,7 +138,7 @@ const OrdersPage = () => {
       </div>
 
       {/* Tabela de pedidos */}
-      <div className="relative overflow-x-auto shadow">
+      <div className="relative overflow-x-auto shadow rounded-lg">
         <table className="w-full text-sm text-left rtl:text-right text-gray-500">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50">
             <tr>

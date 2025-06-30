@@ -63,7 +63,7 @@ const TableCard = ({ data, id }: any) => {
 
     return (
         <>
-            <tr className="bg-white border-b  ">
+            <tr className="bg-white border-b bg-stone-200">
                 {/* ID do usuário */}
                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                     {id}
@@ -85,14 +85,14 @@ const TableCard = ({ data, id }: any) => {
                     <button
                         onClick={() => setVisible(!visible)}
                         title="Visualizar"
-                        className="p-4 bg-teal-500 text-white rounded-sm mx-2"
+                        className="p-4 bg-green-500 text-white rounded-sm mx-2"
                     >
                         <LuView className="text-xl" />
                     </button>
                     <button
                         onClick={() => setVisible(!visible)}
                         title="Editar"
-                        className="p-4 bg-orange-400 text-white rounded-sm mx-2"
+                        className="p-4 bg-purple-500 text-white rounded-sm mx-2"
                     >
                         <FaRegEdit className="text-xl" />
                     </button>

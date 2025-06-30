@@ -19,9 +19,9 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <>
-      <div className="flex items-start lg:gap-x-2">
+      <div className="flex items-start lg:gap-x-2 bg-stone-400 h-screen m-0 p-0">
         {/* Sidebar de navegação */}
-        <Sidebar collapsed={selector.collapsed} breakPoint="lg" toggled={selector.toggle} >
+        <Sidebar collapsed={selector.collapsed} breakPoint="lg" toggled={selector.toggle} className='bg-stone-900'>
           <Menu >
             {/* Botão de toggle para dispositivos móveis */}
             <MenuItem 
@@ -37,25 +37,25 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
             {/* Item de menu - Dashboard */}
             <MenuItem 
               component={<Link to="/" />} 
-              icon={<MdOutlineSpaceDashboard className="text-2xl" />} 
+              icon={<MdOutlineSpaceDashboard className="text-2xl text-stone-800" />} 
             >
-              Painel de Controle
+              <div className='text-stone-800'>Painel de Controle</div>
             </MenuItem>
 
             {/* Item de menu - Pedidos */}
             <MenuItem 
               component={<Link to="/orders" />} 
-              icon={<FiBox className="text-2xl" />}
+              icon={<FiBox className="text-2xl text-stone-800" />}
             >
-              Pedidos
+              <div className='text-stone-800'>Pedidos</div>
             </MenuItem>
 
             {/* Item de menu - Usuários */}
             <MenuItem 
               component={<Link to="/user" />} 
-              icon={<FiUser className="text-2xl" />} 
+              icon={<FiUser className="text-2xl text-stone-800" />} 
             >
-              Usuários
+              <div className='text-stone-800'>Usuários</div>
             </MenuItem>
           </Menu>
         </Sidebar>

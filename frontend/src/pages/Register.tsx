@@ -57,31 +57,32 @@ const Register = () => {
   }
 
   return (
-    <div className='min-h-screen flex items-center justify-center w-full bg-[#eee]'>
+    <div className='min-h-screen flex items-center justify-center w-full bg-[#eeee]'>
       <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={OnSubmitHandler}>
         {({ values, setFieldValue, handleSubmit }) => (
           <>
             <form onSubmit={handleSubmit} className="w-[96%] md:w-[70%] lg:w-1/3 shadow-md rounded-md pt-10 pb-3 px-4 bg-white">
+              <h1 className="text-center font-bold text-2xl">REGISTRO</h1>
               {/* Campo Nome */}
               <div className="mb-3 py-1">
                 <label htmlFor="name">Nome</label>
-                <Field 
-                  id='name' 
-                  name='name' 
-                  className='w-full outline-none py-3 px-2 border-[.1px] border-zinc-400 rounded-lg' 
-                  placeholder='Digite seu nome completo' 
+                <Field
+                  id='name'
+                  name='name'
+                  className='w-full outline-none py-3 px-2 border-[.1px] border-zinc-400 rounded-lg'
+                  placeholder='Digite seu nome'
                 />
                 <ErrorMessage component={'p'} className='text-red-500 text-sm ' name='name' />
               </div>
 
               {/* Campo Email */}
               <div className="mb-3 py-1">
-                <label htmlFor="email">Email</label>
-                <Field 
-                  id='email' 
-                  name='email' 
-                  className='w-full outline-none py-3 px-2 border-[.1px] border-zinc-400 rounded-lg' 
-                  placeholder='Digite seu endereço de email' 
+                <label htmlFor="email">E-mail</label>
+                <Field
+                  id='email'
+                  name='email'
+                  className='w-full outline-none py-3 px-2 border-[.1px] border-zinc-400 rounded-lg'
+                  placeholder='Digite seu e-nail'
                 />
                 <ErrorMessage component={'p'} className='text-red-500 text-sm ' name='email' />
               </div>
@@ -89,30 +90,30 @@ const Register = () => {
               {/* Campo Senha */}
               <div className="mb-3 py-1">
                 <label htmlFor="password">Senha</label>
-                <Field 
-                  name='password' 
-                  id='password' 
+                <Field
+                  name='password'
+                  id='password'
                   type="password"
-                  className='w-full outline-none py-3 px-2 border-[.1px] border-zinc-400 rounded-lg' 
-                  placeholder='*****' 
+                  className='w-full outline-none py-3 px-2 border-[.1px] border-zinc-400 rounded-lg'
+                  placeholder='******************'
                 />
                 <ErrorMessage component={'p'} className='text-red-500 text-sm ' name='password' />
               </div>
 
               {/* Botão de Registro */}
               <div className="mb-3 py-1">
-                <Button 
-                  loading={registerUserResponse.isLoading} 
-                  raised 
-                  type='submit' 
-                  className='w-full bg-red-500 text-white py-3 px-2 flex items-center justify-center'
+                <Button
+                  loading={registerUserResponse.isLoading}
+                  raised
+                  type='submit'
+                  className='w-full bg-blue-800 text-white py-3 px-2 flex items-center justify-center rounded-lg font-semibold'
                 >
-                  Registrar
+                  REGISTRAR
                 </Button>
               </div>
 
               {/* Link para Login */}
-              <div className="mb-3 py-1 flex items-center justify-end">
+              <div className="mb-3 py-1 flex items-center justify-center">
                 <p className="inline-flex items-center gap-x-1">
                   Já tem uma conta?
                   <Link className='font-semibold' to={'/login'}>

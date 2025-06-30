@@ -34,8 +34,8 @@ const Header = () => {
 
   return (
     <>
-      <header className="py-4 shadow md px-10">
-        <div className="nav flex items-center justify-between">
+      <header className="py-4 shadow md px-10 bg-stone-600 text-stone-100">
+        <div className="nav flex items-center justify-between text-stone-100">
           {/* Botões de controle da sidebar */}
           <div className="btn">
             {/* Botão para dispositivos móveis */}

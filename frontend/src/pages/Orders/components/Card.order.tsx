@@ -40,7 +40,7 @@ const TableCard = ({ data, id }: any) => {
 
     return (
         <>
-            <tr className="bg-white border-b  ">
+            <tr className="bg-stone-200 border-b">
                 {/* ID do pedido */}
                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                     {id}
@@ -67,8 +67,8 @@ const TableCard = ({ data, id }: any) => {
                 <td className="px-6 py-4">
                     <button
                         onClick={() => setVisible(!visible)}
-                        title="Visualizar"
-                        className="p-4 bg-teal-500 text-white rounded-sm mx-2"
+                        title="Ver"
+                        className="p-4 bg-green-500 text-white rounded-sm mx-2"
                     >
                         <BsPrinter className="text-xl" />
                     </button>

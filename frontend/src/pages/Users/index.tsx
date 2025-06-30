@@ -79,9 +79,9 @@ const UserPage = () => {
       <div className="mb-3 flex justify-end w-[90%] mx-auto">
         <button 
           onClick={() => setVisible(!visible)} 
-          className="px-5 py-2 bg-purple-500 text-white rounded-sm"
+          className="px-5 py-2 bg-sky-500 text-white rounded-sm rounded-lg"
         >
-          Adicionar Usuário
+          Novo Usuário
         </button>
       </div>
 
@@ -90,7 +90,7 @@ const UserPage = () => {
         <input
           value={Search}
           onChange={(e: any) => setSearch(e.target.value)}
-          className="w-[90%] mx-auto lg:mx-0 lg:w-1/2 rounded-sm border py-3 px-5 outline-none"
+          className="w-[90%] mx-auto lg:mx-0 lg:w-1/2 rounded-sm border py-3 px-5 outline-none rounded-lg"
           placeholder="Buscar Usuário"
         />
       </form>
@@ -123,7 +123,7 @@ const UserPage = () => {
         {isLoading || isFetching ? (
           <Loader />
         ) : (
-          <div className="relative overflow-x-auto shadow">
+          <div className="relative overflow-x-auto shadow rounded-lg">
             <table className="w-full text-sm text-left rtl:text-right text-gray-500">
               <thead className="text-xs text-gray-700 uppercase bg-gray-50">
                 <tr>
