@@ -8,10 +8,9 @@ const { body } = require("express-validator");
 class AuthValidation {
   /**
    * Validações para registro de usuário
-   * Verifica token do captcha, nome, email e senha
+   * Verifica nome, email e senha
    */
   static RegisterUser = [
-    body("token").notEmpty().withMessage("Token do captcha é obrigatório"),
     body("name").notEmpty().withMessage("Nome não pode ser vazio"),
     body("email")
       .isEmail()
@@ -27,10 +26,9 @@ class AuthValidation {
 
   /**
    * Validações para login de usuário
-   * Verifica token do captcha, email e senha
+   * Verifica email e senha
    */
   static LoginUser = [
-    body("token").notEmpty().withMessage("Token do captcha é obrigatório"),
     body("email")
       .isEmail()
       .withMessage("E-mail deve ser válido")
